@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHRONÉA | Luxury Timepieces</title>
+    <meta name="description"
+        content="Discover exquisite luxury watches crafted to perfection. Swiss engineering meets timeless elegance.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Ionicons for Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="logo-wrapper">
+                <img src="images/logo.png" alt="Logo" class="logo-img">
+                <a href="index.html" class="logo">CHRO<span>NÉA</span></a>
+            </div>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home 1</a></li>
+                    <li><a href="home-2.html" class="nav-link">Home 2</a></li>
+                    <li><a href="shop.html" class="nav-link">Collection</a></li>
+                    <li><a href="brand-stories.html" class="nav-link">Brand Story</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-icons">
+                <button class="icon-btn" id="theme-toggle" aria-label="Toggle Theme"><ion-icon
+                        name="sunny-outline"></ion-icon></button>
+                <button class="icon-btn" aria-label="Wishlist"><ion-icon name="heart-outline"></ion-icon></button>
+                <button class="icon-btn" aria-label="Cart"><ion-icon name="bag-outline"></ion-icon></button>
+                <a href="inquiry.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.8rem;">Inquiry</a>
+
+                <div class="profile-wrapper">
+                    <button class="icon-btn" id="profile-btn" aria-label="Profile"><ion-icon
+                            name="person-outline"></ion-icon></button>
+                    <div class="dropdown-menu">
+                        <a href="login.html" class="dropdown-item">Login</a>
+                        <a href="signup.html" class="dropdown-item">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/hero_dark.png" alt="Luxury Watch Movement" class="hero-bg" style="filter: brightness(0.6);">
+        <div class="container">
+            <div class="hero-content text-center" style="margin: 0 auto;">
+                <span class="hero-tagline">CHRONÉA</span>
+                <h1>TIME IS THE ONLY<br>TRUE LUXURY.</h1>
+                <p class="mb-4" style="color: rgba(255,255,255,0.9);">Discover a curated selection of the world's finest
+                    timepieces.<br>Swiss precision,
+                    timeless design, and uncompromised luxury.</p>
+                <div class="hero-btns" style="justify-content: center; display: flex; gap: 20px;">
+                    <a href="shop.html" class="btn btn-primary">Explore Collection</a>
+                    <a href="inquiry.html" class="btn btn-outline" style="color: #fff; border-color: #fff;">Request
+                        Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Highlights -->
+    <section class="section bg-darker">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <ion-icon name="watch-outline" class="feature-icon"></ion-icon>
+                    <h3>Swiss Movement</h3>
+                    <p>Powered by precision-engineered mechanics for accurate timekeeping.</p>
+                </div>
+                <div class="feature-item">
+                    <ion-icon name="diamond-outline" class="feature-icon"></ion-icon>
+                    <h3>Sapphire Crystal</h3>
+                    <p>Scratch-resistant glass ensures your timepiece remains pristine forever.</p>
+                </div>
+                <div class="feature-item">
+                    <ion-icon name="ribbon-outline" class="feature-icon"></ion-icon>
+                    <h3>Heritage</h3>
+                    <p>Over a century of watchmaking excellence and tradition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Selling / Featured -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2>Featured Timepieces</h2>
+                <p>Curated for the discerning collector.</p>
+            </div>
+
+            <div class="collection-grid">
+                <!-- Product Card 1 -->
+                <article class="product-card">
+                    <button class="wishlist-btn-card" data-name="Gold Horizon" aria-label="Add to Wishlist">
+                        <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+                    <img src="https://images.pexels.com/photos/9203637/pexels-photo-9203637.jpeg" alt="Gold Horizon"
+                        class="product-img">
+                    <div class="product-info">
+                        <div class="product-cat">Moonphase Series</div>
+                        <h3 class="product-title">Gold Horizon</h3>
+                        <div class="product-price">On Request</div>
+                        <a href="shop.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </article>
+
+                <!-- Product Card 2 -->
+                <article class="product-card">
+                    <button class="wishlist-btn-card" data-name="Silver Chrono II" aria-label="Add to Wishlist">
+                        <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+                    <img src="images/watch-silver.png" alt="Silver Chrono" class="product-img">
+                    <div class="product-info">
+                        <div class="product-cat">Chronograph</div>
+                        <h3 class="product-title">Silver Chrono II</h3>
+                        <div class="product-price">On Request</div>
+                        <a href="shop.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </article>
+
+                <!-- Product Card 3 (Reuse Gold for Demo) -->
+                <article class="product-card">
+                    <button class="wishlist-btn-card" data-name="Royal Emblem" aria-label="Add to Wishlist">
+                        <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+                    <img src="images/watch-gold.png" alt="Royal Oak" class="product-img">
+                    <div class="product-info">
+                        <div class="product-cat">Heritage</div>
+                        <h3 class="product-title">Royal Emblem</h3>
+                        <div class="product-price">On Request</div>
+                        <a href="shop.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" style="background-color: #ffffff;">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2>Voices of Luxury</h2>
+            </div>
+            <div class="testimonial-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <ion-icon name="quote" class="quote-icon"></ion-icon>
+                    <div class="testimonial-text">
+                        "This isn't just a watch; it's a statement. The craftsmanship is impeccable, and the service was
+                        nothing short of extraordinary."
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Jonathan Sterling</h4>
+                        <p>Collector</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <ion-icon name="quote" class="quote-icon"></ion-icon>
+                    <div class="testimonial-text">
+                        "An absolute masterpiece. The movement is mesmerizing, and the case finishing rivals the big
+                        three.
+                        Highly recommended."
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Alexander V.</h4>
+                        <p>Horologist</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <ion-icon name="quote" class="quote-icon"></ion-icon>
+                    <div class="testimonial-text">
+                        "Exceptional service from start to finish. CHRONÉA understands that true luxury is about the
+                        experience as much as the product."
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Isabella R.</h4>
+                        <p>Art Curator</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center" style="max-width: 600px; margin: 0 auto;">
+                <h2>Join the Inner Circle</h2>
+                <p>Subscribe to receive exclusive updates on new arrivals and private viewings.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email Address" class="newsletter-input" required>
+                    <button type="submit" class="newsletter-btn">SUBSCRIBE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                        <img src="images/logo.png" alt="CHRONÉA Logo" style="height: 30px; width: auto;">
+                        <div class="logo" style="cursor: default; margin-bottom: 0;">CHRO<span>NÉA</span></div>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--color-text-muted);">Defining the essence of luxury
+                        timepieces since 1924.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Collections</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html">New Arrivals</a></li>
+                        <li><a href="shop.html">Best Sellers</a></li>
+                        <li><a href="shop.html">Men's Watches</a></li>
+                        <li><a href="shop.html">Women's Watches</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Brand</h4>
+                    <ul class="footer-links">
+                        <li><a href="brand-stories.html">Our Story</a></li>
+                        <li><a href="about.html">Craftsmanship</a></li>
+                        <li><a href="contact.html">Boutiques</a></li>
+                        <li><a href="home-2.html">Journal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:concierge@chronea.com">concierge@chronea.com</a></li>
+                        <li><a href="tel:+41225550199">+41 22 555 0199</a></li>
+                        <li><a href="#">Le Locle, Switzerland</a></li>
+                    </ul>
+                    <div class="header-icons" style="justify-content: flex-start; margin-top: 20px;">
+                        <a href="#" class="icon-btn"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#" class="icon-btn"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#" class="icon-btn"><svg xmlns="http://www.w3.org/2000/svg" width="0.8em"
+                                height="0.8em" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle;">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zl-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 CHRONÉA Watches. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

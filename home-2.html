@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHRONÉA | Modern Luxury</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="logo-wrapper">
+                <img src="images/logo.png" alt="Logo" class="logo-img">
+                <a href="index.html" class="logo">CHRO<span>NÉA</span></a>
+            </div>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home 1</a></li>
+                    <li><a href="home-2.html" class="nav-link active">Home 2</a></li>
+                    <li><a href="shop.html" class="nav-link">Collection</a></li>
+                    <li><a href="brand-stories.html" class="nav-link">Brand Story</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-icons">
+                <button class="icon-btn" id="theme-toggle" aria-label="Toggle Theme"><ion-icon
+                        name="sunny-outline"></ion-icon></button>
+                <a href="wishlist.html" class="icon-btn" aria-label="Wishlist" style="position: relative;">
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <span class="wishlist-badge">0</span>
+                </a>
+                <button class="icon-btn" aria-label="Cart"><ion-icon name="bag-outline"></ion-icon></button>
+                <a href="inquiry.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.8rem;">Inquiry</a>
+
+                <div class="profile-wrapper">
+                    <button class="icon-btn" id="profile-btn" aria-label="Profile"><ion-icon
+                            name="person-outline"></ion-icon></button>
+                    <div class="dropdown-menu">
+                        <a href="login.html" class="dropdown-item">Login</a>
+                        <a href="signup.html" class="dropdown-item">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section 1: Split Hero -->
+    <!-- Section 1: Hero (Formerly Parallax) -->
+    <section class="hero"
+        style="height: 100vh; background: url('images/hero_dark.png') fixed center/cover; display: flex; align-items: center; justify-content: center; position: relative; padding-top: 0;">
+        <div style="background: rgba(0,0,0,0.6); position: absolute; top:0; left:0; right:0; bottom:0;"></div>
+        <div class="container text-center" style="position: relative; z-index: 2;">
+            <h1 style="color: white; margin-bottom: 20px; text-transform: uppercase;">Precision Beyond Measure</h1>
+            <p
+                style="color: rgba(255,255,255,0.9); font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Where avant-garde engineering meets traditional craftsmanship.<br>
+                Discover the art of the possible with our latent innovations.
+            </p>
+            <a href="about.html" class="btn btn-outline" style="border-color: white; color: white;">Read Our
+                Philosophy</a>
+        </div>
+    </section>
+
+    <!-- Section 2: Horizontal Scroll Showcase -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center mb-4">Curated Selections</h2>
+            <div
+                style="display: flex; gap: 40px; overflow-x: auto; padding-bottom: 40px; scroll-snap-type: x mandatory;">
+                <div style="min-width: 350px; scroll-snap-align: center;">
+                    <img src="https://images.pexels.com/photos/32040833/pexels-photo-32040833.jpeg"
+                        style="width: 100%; height: 280px; object-fit: cover; margin-bottom: 20px;">
+                    <h3>The Gold Standard</h3>
+                    <p>Designed for the executive.</p>
+                </div>
+                <!-- Reuse images for demo -->
+                <div style="min-width: 350px; scroll-snap-align: center;">
+                    <img src="images/watch-silver.png"
+                        style="width: 100%; height: 280px; object-fit: cover; margin-bottom: 20px;">
+                    <h3>The Silver Arrow</h3>
+                    <p>Designed for speed.</p>
+                </div>
+                <div style="min-width: 350px; scroll-snap-align: center;">
+                    <img src="images/watch-gold.png"
+                        style="width: 100%; height: 280px; object-fit: cover; margin-bottom: 20px;">
+                    <h3>The Royal Heritage</h3>
+                    <p>Designed for legacy.</p>
+                </div>
+                <div style="min-width: 350px; scroll-snap-align: center;">
+                    <img src="https://images.pexels.com/photos/10414974/pexels-photo-10414974.jpeg"
+                        style="width: 100%; height: 280px; object-fit: cover; margin-bottom: 20px;">
+                    <h3>Midnight Run</h3>
+                    <p>Designed for the night.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Parallax Banner -->
+
+
+    <!-- Section 4: Grid Highlights (Different Layout) -->
+    <section class="section bg-darker">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                <div class="text-center"> <!-- Added text-center -->
+                    <h2 style="margin-bottom: 40px;">Masterful <br> Engineering</h2>
+                    <div style="display: flex; gap: 20px; margin-bottom: 30px;">
+                        <div style="font-size: 2rem; color: var(--color-accent);">01.</div>
+                        <div>
+                            <h4 style="color: var(--color-text-main);">Caliber 9000</h4>
+                            <p>Our in-house movement features a 90-hour power reserve.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 20px; margin-bottom: 30px;">
+                        <div style="font-size: 2rem; color: var(--color-accent);">02.</div>
+                        <div>
+                            <h4 style="color: var(--color-text-main);">Micro-Rotor</h4>
+                            <p>Ultra-thin automatic winding system for slim profiles.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 20px;">
+                        <div style="font-size: 2rem; color: var(--color-accent);">03.</div>
+                        <div>
+                            <h4 style="color: var(--color-text-main);">Silicon Hairspring</h4>
+                            <p>Anti-magnetic properties for uncompromised accuracy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="images/watch-silver.png"
+                        style="width: auto; max-width: 70%; display: block; margin: 0 auto; border-radius: 4px; filter: grayscale(100%); transition: 0.5s;"
+                        onmouseover="this.style.filter='none'" onmouseout="this.style.filter='grayscale(100%)'">
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- New Section: Rare Materials -->
+    <section class="section bg-darker">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2>Rare Materials</h2>
+                <p style="max-width: 600px; margin: 0 auto; margin-bottom: 40px;">We travel to the ends of the earth to
+                    source materials that ensure longevity, beauty, and resilience.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item" style="text-align: center;">
+                    <h3 style="color: var(--color-text-main);">Grade 5 Titanium</h3>
+                    <p>Lighter than steel yet twice as strong, offering unparalleled comfort and durability for daily
+                        wear.</p>
+                </div>
+                <div class="feature-item" style="text-align: center;">
+                    <h3 style="color: var(--color-text-main);">Sapphire Crystal</h3>
+                    <p>Virtually scratch-proof and anti-reflective, providing perfect clarity for the dial underneath.
+                    </p>
+                </div>
+                <div class="feature-item" style="text-align: center;">
+                    <h3 style="color: var(--color-text-main);">18K Magic Gold</h3>
+                    <p>Our proprietary alloy that maintains its luster forever, resistant to the tarnish of time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: The Journal (Blog Preview) -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-4"> <!-- Centered Heading -->
+                <h2>The Journal</h2>
+                <a href="#"
+                    style="color: var(--color-accent); border-bottom: 1px solid var(--color-accent); display: inline-block; margin-top: 10px;">View
+                    All Stories</a>
+            </div>
+            <div class="collection-grid">
+                <article style="text-align: left;">
+                    <img src="https://images.pexels.com/photos/15074402/pexels-photo-15074402.jpeg"
+                        alt="Vintage Watch Collection"
+                        style="width: 100%; height: 180px; object-fit: cover; margin-bottom: 20px;">
+                    <span style="font-size: 0.8rem; letter-spacing: 0.1em; color: var(--color-accent);">Lifestyle</span>
+                    <h3 style="margin-top: 10px;">Collecting Vintage Icons</h3>
+                    <p>A guide to starting your first vintage collection.</p>
+                </article>
+                <article style="text-align: left;">
+                    <img src="https://images.pexels.com/photos/8327805/pexels-photo-8327805.jpeg"
+                        alt="Future of Mechanics"
+                        style="width: 100%; height: 180px; object-fit: cover; margin-bottom: 20px;">
+                    <span
+                        style="font-size: 0.8rem; letter-spacing: 0.1em; color: var(--color-accent);">Technology</span>
+                    <h3 style="margin-top: 10px;">The Future of Mechanics</h3>
+                    <p>How modern materials are reshaping watchmaking.</p>
+                </article>
+                <article style="text-align: left;">
+                    <img src="https://images.pexels.com/photos/13002000/pexels-photo-13002000.jpeg"
+                        alt="Geneva Watch Days"
+                        style="width: 100%; height: 180px; object-fit: cover; margin-bottom: 20px;">
+                    <span style="font-size: 0.8rem; letter-spacing: 0.1em; color: var(--color-accent);">Events</span>
+                    <h3 style="margin-top: 10px;">Geneva Watch Days Recapped</h3>
+                    <p>Highlights from this year's most exclusive event.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Standard) -->
+    <!-- Footer (Standard) -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                        <img src="images/logo.png" alt="CHRONÉA Logo" style="height: 30px; width: auto;">
+                        <div class="logo" style="cursor: default; margin-bottom: 0;">CHRO<span>NÉA</span></div>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--color-text-muted);">Defining the essence of luxury
+                        timepieces since 1924.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Collections</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html">New Arrivals</a></li>
+                        <li><a href="shop.html">Best Sellers</a></li>
+                        <li><a href="shop.html">Men's Watches</a></li>
+                        <li><a href="shop.html">Women's Watches</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Brand</h4>
+                    <ul class="footer-links">
+                        <li><a href="brand-stories.html">Our Story</a></li>
+                        <li><a href="about.html">Craftsmanship</a></li>
+                        <li><a href="contact.html">Boutiques</a></li>
+                        <li><a href="home-2.html">Journal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:concierge@chronea.com">concierge@chronea.com</a></li>
+                        <li><a href="tel:+41225550199">+41 22 555 0199</a></li>
+                        <li><a href="#">Le Locle, Switzerland</a></li>
+                    </ul>
+                    <div class="header-icons" style="justify-content: flex-start; margin-top: 20px;">
+                        <a href="#" class="icon-btn"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#" class="icon-btn"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#" class="icon-btn"><svg xmlns="http://www.w3.org/2000/svg" width="0.8em"
+                                height="0.8em" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle;">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zl-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 CHRONÉA Watches. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

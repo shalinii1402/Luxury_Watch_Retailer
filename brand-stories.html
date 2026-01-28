@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Legacy | CHRONÉA</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            background: var(--color-accent);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -0.5px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: -8px;
+            background-color: var(--color-bg-dark);
+            border: 2px solid var(--color-accent);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+            text-align: right;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .right::after {
+            left: -8px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--color-bg-card);
+            position: relative;
+            border-radius: 4px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 23px;
+            }
+
+            .left {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header" id="header">
+        <div class="container">
+            <div class="logo-wrapper">
+                <img src="images/logo.png" alt="Logo" class="logo-img">
+                <a href="index.html" class="logo">CHRO<span>NÉA</span></a>
+            </div>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home 1</a></li>
+                    <li><a href="home-2.html" class="nav-link">Home 2</a></li>
+                    <li><a href="shop.html" class="nav-link">Collection</a></li>
+                    <li><a href="brand-stories.html" class="nav-link active">Brand Story</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-icons">
+                <button class="icon-btn" id="theme-toggle" aria-label="Toggle Theme"><ion-icon
+                        name="sunny-outline"></ion-icon></button>
+                <a href="wishlist.html" class="icon-btn" aria-label="Wishlist" style="position: relative;">
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <span class="wishlist-badge">0</span>
+                </a>
+                <button class="icon-btn" aria-label="Cart"><ion-icon name="bag-outline"></ion-icon></button>
+                <a href="inquiry.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.8rem;">Inquiry</a>
+
+                <div class="profile-wrapper">
+                    <button class="icon-btn" id="profile-btn" aria-label="Profile"><ion-icon
+                            name="person-outline"></ion-icon></button>
+                    <div class="dropdown-menu">
+                        <a href="login.html" class="dropdown-item">Login</a>
+                        <a href="signup.html" class="dropdown-item">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero" style="height: 60vh;">
+        <img src="images/hero.png" alt="Heritage" class="hero-bg" style="filter: brightness(0.4);">
+        <div class="container">
+            <div class="hero-content text-center" style="margin: 0 auto;">
+                <h1 style="color: var(--color-accent); font-weight: 600;">A Century of Excellence</h1>
+                <p>The history of CHRONÉA is written in the language of time.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>1924</h3>
+                        <p>Founded in Le Locle, Switzerland, with a vision to create the world's most accurate
+                            chronometer.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>1956</h3>
+                        <p>Introduced the first automatic movement with a 72-hour power reserve, revolutionizing the
+                            industry.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>1980</h3>
+                        <p>Awarded the prestigious "Grand Prix d'Horlogerie" for design innovation.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>2024</h3>
+                        <p>Celebrating 100 years of defining luxury, with the launch of the Centennial Moonphase series.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Content Sections -->
+    <section class="section bg-darker">
+        <div class="container">
+            <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+                <h2 style="margin-bottom: 20px;">Uncompromising Craftsmanship</h2>
+                <div style="width: 60px; height: 2px; background: var(--color-accent); margin: 0 auto 30px;"></div>
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    Every CHRONÉA timepiece is a testament to patience and precision. Our master watchmakers spend
+                    hundreds of hours hand-polishing a single movement. We believe that true luxury is not just seen,
+                    but
+                    felt—in the weight of the case, the smooth sweep of the seconds hand, and the flawless engagement of
+                    the crown.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+                <h2 style="margin-bottom: 20px;">Innovation Meets Tradition</h2>
+                <div style="width: 60px; height: 2px; background: var(--color-accent); margin: 0 auto 30px;"></div>
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    While we honor the techniques of the past, we are driven by the possibilities of the future. Our
+                    laboratories are constantly exploring new materials—from ultra-light titanium alloys to
+                    scratch-resistant unscratchable ceramics. This fusion of old-world skill and new-world technology
+                    allows us to create watches that are not only beautiful but technically superior.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-darker">
+        <div class="container">
+            <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+                <h2 style="margin-bottom: 20px;">Our Enduring Values</h2>
+                <div style="width: 60px; height: 2px; background: var(--color-accent); margin: 0 auto 30px;"></div>
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    Integrity, exclusivity, and legacy. These are the pillars upon which CHRONÉA stands. We limit our
+                    annual production to ensure that every watch meets our rigorous standards. Owning a CHRONÉA is not
+                    merely a purchase; it is an entry into a lineage of individuals who appreciate the profound value of
+                    time itself.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                        <img src="images/logo.png" alt="CHRONÉA Logo" style="height: 30px; width: auto;">
+                        <div class="logo" style="cursor: default; margin-bottom: 0;">CHRO<span>NÉA</span></div>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--color-text-muted);">Defining the essence of luxury
+                        timepieces since 1924.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Collections</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html">New Arrivals</a></li>
+                        <li><a href="shop.html">Best Sellers</a></li>
+                        <li><a href="shop.html">Men's Watches</a></li>
+                        <li><a href="shop.html">Women's Watches</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Brand</h4>
+                    <ul class="footer-links">
+                        <li><a href="brand-stories.html">Our Story</a></li>
+                        <li><a href="about.html">Craftsmanship</a></li>
+                        <li><a href="contact.html">Boutiques</a></li>
+                        <li><a href="home-2.html">Journal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:concierge@chronea.com">concierge@chronea.com</a></li>
+                        <li><a href="tel:+41225550199">+41 22 555 0199</a></li>
+                        <li><a href="#">Le Locle, Switzerland</a></li>
+                    </ul>
+                    <div class="header-icons" style="justify-content: flex-start; margin-top: 20px;">
+                        <a href="#" class="icon-btn"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#" class="icon-btn"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#" class="icon-btn"><svg xmlns="http://www.w3.org/2000/svg" width="0.8em"
+                                height="0.8em" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle;">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zl-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 CHRONÉA Watches. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

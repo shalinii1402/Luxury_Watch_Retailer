@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | CHRONÉA</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-card {
+            background: var(--color-bg-card);
+            padding: 40px;
+            height: 100%;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header" id="header">
+        <div class="container">
+            <div class="logo-wrapper">
+                <img src="images/logo.png" alt="Logo" class="logo-img">
+                <a href="index.html" class="logo">CHRO<span>NÉA</span></a>
+            </div>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home 1</a></li>
+                    <li><a href="home-2.html" class="nav-link">Home 2</a></li>
+                    <li><a href="shop.html" class="nav-link">Collection</a></li>
+                    <li><a href="brand-stories.html" class="nav-link">Brand Story</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-icons">
+                <button class="icon-btn" id="theme-toggle" aria-label="Toggle Theme"><ion-icon
+                        name="sunny-outline"></ion-icon></button>
+                <a href="wishlist.html" class="icon-btn" aria-label="Wishlist" style="position: relative;">
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <span class="wishlist-badge">0</span>
+                </a>
+                <button class="icon-btn" aria-label="Cart"><ion-icon name="bag-outline"></ion-icon></button>
+                <a href="inquiry.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.8rem;">Inquiry</a>
+
+                <div class="profile-wrapper">
+                    <button class="icon-btn" id="profile-btn" aria-label="Profile"><ion-icon
+                            name="person-outline"></ion-icon></button>
+                    <div class="dropdown-menu">
+                        <a href="login.html" class="dropdown-item">Login</a>
+                        <a href="signup.html" class="dropdown-item">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="section" style="padding-top: 140px;">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2>Visit Our Boutique</h2>
+                <p>Experience the collection in person.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Contact Information</h3>
+                    <div class="info-item" style="margin-top: 30px;">
+                        <ion-icon name="location-outline" class="info-icon"></ion-icon>
+                        <div>
+                            <strong style="color: white; display: block; margin-bottom: 5px;">CHRONÉA Flagship
+                                Store</strong>
+                            <p>123 Luxury Avenue, District 1<br>Geneva, Switzerland 1204</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <ion-icon name="call-outline" class="info-icon"></ion-icon>
+                        <div>
+                            <strong style="color: white; display: block; margin-bottom: 5px;">Phone</strong>
+                            <p>+41 22 123 4567</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <ion-icon name="mail-outline" class="info-icon"></ion-icon>
+                        <div>
+                            <strong style="color: white; display: block; margin-bottom: 5px;">Concierge Email</strong>
+                            <p>concierge@chronea-watches.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <ion-icon name="time-outline" class="info-icon"></ion-icon>
+                        <div>
+                            <strong style="color: white; display: block; margin-bottom: 5px;">Opening Hours</strong>
+                            <p>Mon - Sat: 10:00 AM - 8:00 PM<br>Sun: By Appointment Only</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-card" style="padding: 0; overflow: hidden;">
+                    <!-- Map Placeholder -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2761.6441551066046!2d6.143158!3d46.204391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c6526a6b1897b%3A0x6b2b7e51c8e1e0a!2sGeneva%2C%20Switzerland!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                        width="100%" height="100%" style="border:0; filter: invert(90%) hue-rotate(180deg);"
+                        allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                        <img src="images/logo.png" alt="CHRONÉA Logo" style="height: 30px; width: auto;">
+                        <div class="logo" style="cursor: default; margin-bottom: 0;">CHRO<span>NÉA</span></div>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--color-text-muted);">Defining the essence of luxury
+                        timepieces since 1924.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Collections</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html">New Arrivals</a></li>
+                        <li><a href="shop.html">Best Sellers</a></li>
+                        <li><a href="shop.html">Men's Watches</a></li>
+                        <li><a href="shop.html">Women's Watches</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Brand</h4>
+                    <ul class="footer-links">
+                        <li><a href="brand-stories.html">Our Story</a></li>
+                        <li><a href="about.html">Craftsmanship</a></li>
+                        <li><a href="contact.html">Boutiques</a></li>
+                        <li><a href="home-2.html">Journal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:concierge@chronea.com">concierge@chronea.com</a></li>
+                        <li><a href="tel:+41225550199">+41 22 555 0199</a></li>
+                        <li><a href="#">Le Locle, Switzerland</a></li>
+                    </ul>
+                    <div class="header-icons" style="justify-content: flex-start; margin-top: 20px;">
+                        <a href="#" class="icon-btn"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#" class="icon-btn"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#" class="icon-btn"><svg xmlns="http://www.w3.org/2000/svg" width="0.8em"
+                                height="0.8em" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle;">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zl-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 CHRONÉA Watches. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

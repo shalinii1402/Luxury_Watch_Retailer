@@ -1,0 +1,830 @@
+/* 
+   CHRONÉA Luxury Watches - Design System 
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap');
+
+:root {
+    /* Dark Theme (Default) */
+    --color-bg-dark: #0a0a0a;
+    --color-bg-card: #141414;
+    --color-text-main: #ffffff;
+    --color-text-muted: #a0a0a0;
+    --color-accent: #d4af37;
+    /* Metallic Gold */
+    --color-accent-hover: #b4942b;
+    --color-border: #333333;
+    --color-white: #ffffff;
+    --color-bg-overlay: rgba(10, 10, 10, 0.9);
+    --header-bg: rgba(10, 10, 10, 0.8);
+    --header-rolled: rgba(10, 10, 10, 0.95);
+
+    /* Spacing */
+    --container-width: 1240px;
+    --section-padding: 100px 20px;
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Light Theme Variables */
+[data-theme="light"] {
+    --color-bg-dark: #f4f4f4;
+    --color-bg-card: #ffffff;
+    --color-text-main: #1a1a1a;
+    --color-text-muted: #666666;
+    --color-accent: #b08d26;
+    /* Darker Gold for contrast */
+    --color-accent-hover: #90721d;
+    --color-border: #e0e0e0;
+    --color-white: #1a1a1a;
+    /* Invert white text to dark */
+    --color-bg-overlay: rgba(255, 255, 255, 0.9);
+    --header-bg: rgba(255, 255, 255, 0.8);
+    --header-rolled: rgba(255, 255, 255, 0.95);
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Outfit', sans-serif;
+    /* Enforce font family */
+    font-weight: 500;
+    /* Increased from 300/varies for visibility */
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    /* Consistent uppercase styling */
+    letter-spacing: 0.1em;
+    /* Consistent spacing */
+    color: var(--color-text-main);
+    /* Ensure high contrast by default */
+}
+
+h1 {
+    font-size: 3.5rem;
+    /* Adjusted for balance with caps */
+    line-height: 1.2;
+    font-weight: 600;
+    /* Slightly bolder for Hero */
+    color: var(--color-white);
+    /* Explicit white for hero clarity */
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    /* Keep accent for section titles */
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: var(--transition-smooth);
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    color: #0a0a0a;
+    /* Always dark text on gold button */
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border-color: var(--color-text-main);
+    color: var(--color-text-main);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background-color: var(--color-text-main);
+    color: var(--color-bg-dark);
+    transform: translateY(-2px);
+}
+
+/* Layout Utilities */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: var(--section-padding);
+}
+
+.bg-darker {
+    background-color: var(--color-bg-card);
+}
+
+[data-theme="light"] .bg-darker {
+    background-color: #e8e8e8;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-2 {
+    margin-bottom: 1rem;
+}
+
+.mb-4 {
+    margin-bottom: 2rem;
+}
+
+/* Sticky Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    background: var(--header-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    transition: var(--transition-smooth);
+}
+
+.header.scrolled {
+    padding: 10px 0;
+    background: var(--header-rolled);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 30px;
+    width: auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-text-main);
+}
+
+.logo span {
+    color: var(--color-accent);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    position: relative;
+    font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-accent);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-accent);
+    transition: var(--transition-smooth);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.header-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--color-text-main);
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.icon-btn:hover {
+    color: var(--color-accent);
+}
+
+/* Profile Dropdown */
+.profile-wrapper {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 150%;
+    right: 0;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    min-width: 160px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: var(--transition-smooth);
+    z-index: 1001;
+}
+
+.profile-wrapper.active .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px 20px;
+    color: var(--color-text-main);
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--color-border);
+    transition: background 0.3s;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background: var(--color-bg-dark);
+    color: var(--color-accent);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 0;
+    /* Removed padding to center content exactly */
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.6);
+}
+
+.hero-content {
+    max-width: 800px;
+    animation: fadeUp 1s ease-out;
+}
+
+.hero-tagline {
+    font-size: 1.2rem;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.hero-content h1 {
+    color: #d4af37;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 20px;
+}
+
+/* Auth Pages */
+.auth-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-dark);
+}
+
+.auth-card {
+    background: var(--color-bg-card);
+    padding: 50px;
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    text-align: center;
+}
+
+.auth-card h2 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.auth-card p {
+    margin-bottom: 30px;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Collection Grid */
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+@media (min-width: 1200px) {
+    .collection-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Sort Select Styling */
+#sort-select option {
+    background-color: var(--color-bg-card);
+    color: var(--color-text-main);
+}
+
+.product-card {
+    background-color: var(--color-bg-card);
+    padding: 20px;
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    max-width: 320px;
+    margin: 0 auto;
+    height: 100%;
+    /* Ensure full height in grid */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition-smooth);
+}
+
+.product-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-5px);
+}
+
+.product-img {
+    width: 100%;
+    height: 240px;
+    /* Fixed height for uniformity */
+    object-fit: contain;
+    /* Ensure entire watch is visible */
+    display: block;
+    margin-bottom: 20px;
+    transform: scale(1);
+    transition: var(--transition-smooth);
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.05);
+}
+
+.product-cat {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-bottom: 5px;
+    letter-spacing: 0.1em;
+}
+
+.product-title {
+    font-size: 1.2rem;
+    color: var(--color-text-main);
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+}
+
+/* Features */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    text-align: center;
+}
+
+.feature-item {
+    padding: 40px;
+    background: var(--color-bg-card);
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
+}
+
+.feature-item:hover {
+    border-color: var(--color-accent);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-bg-card);
+    padding: 80px 0 20px;
+    border-top: 1px solid var(--color-border);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-col h4 {
+    color: var(--color-text-main);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--color-accent);
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 20px;
+}
+
+.newsletter-input {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    padding: 10px;
+    color: var(--color-text-main);
+    width: 100%;
+    font-family: inherit;
+}
+
+.newsletter-btn {
+    background: var(--color-accent);
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #0a0a0a;
+}
+
+/* Copy Right */
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    position: relative;
+}
+
+/* Back to Top */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--color-accent);
+    color: #0a0a0a;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    font-size: 1.2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-smooth);
+    z-index: 99;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    transform: translateY(-5px);
+    background: var(--color-accent-hover);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--color-bg-card);
+        z-index: 999;
+        /* Stays below the header (z-index 1000) */
+        padding-top: 80px;
+        /* pushes content below header */
+        padding-bottom: 20px;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        overflow: hidden;
+        /* Prevents scrolling */
+    }
+
+    .header-icons .icon-btn {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+    }
+
+    .header-icons {
+        gap: 10px;
+    }
+}
+
+/* Testimonials Section Updates */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    /* White card */
+    padding: 40px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Soft shadow for depth */
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-accent);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    /* Dark gray for readability on white */
+    font-weight: 300;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.quote-icon {
+    font-size: 2.5rem;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+    opacity: 1;
+}
+
+.testimonial-author h4 {
+    color: #0a0a0a;
+    /* Black for strong contrast */
+    font-size: 1rem;
+    margin-bottom: 5px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.testimonial-author p {
+    color: var(--color-accent);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+
+    /* Rough selector to target the inline style grid on inquiry page */
+    .section>.container>div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+
+    .section>.container>div[style*="grid-template-columns"]>div:first-child {
+        text-align: center !important;
+        padding-top: 0 !important;
+    }
+}
+
+/* Wishlist Badge */
+.wishlist-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--color-accent);
+    color: #000;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.wishlist-badge.show {
+    opacity: 1;
+}
+
+/* Add to Wishlist Button on Product Cards */
+.wishlist-btn-card {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: var(--transition-smooth);
+    color: var(--color-text-main);
+    z-index: 2;
+}
+
+.wishlist-btn-card:hover,
+.wishlist-btn-card.active {
+    background: var(--color-accent);
+    color: #000;
+}
+
+/* Remove button on Wishlist Page */
+.remove-btn {
+    margin-top: 10px;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    width: 100%;
+}
+
+.remove-btn:hover {
+    border-color: red;
+    color: red;
+}
