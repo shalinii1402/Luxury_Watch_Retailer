@@ -383,4 +383,42 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
         });
     });
+    // 9. Scroll Animations
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                // Optional: Stop observing once visible to run only once
+                scrollObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Auto-select elements to animate if they don't have manual classes yet
+    // We target common block elements to apply the default 'fade-up'
+    const animateTargets = document.querySelectorAll('.section, .product-card, .hero-content, .hero-btns, .feature-item, footer, .auth-card');
+
+    animateTargets.forEach((el, index) => {
+        el.classList.add('animate-on-scroll');
+
+        // Add staggering for grids
+        if (el.classList.contains('product-card') || el.classList.contains('feature-item')) {
+            // Simple stagger visual within the same container roughly
+            // We can randomly assign a delay or based on child index
+        }
+
+        scrollObserver.observe(el);
+    });
+
+    // Manual Left/Right targets (e.g., text-heavy sections alternating)
+    const leftTargets = document.querySelectorAll('.animate-left-prox');
+    leftTargets.forEach(el => {
+        el.classList.add('animate-on-scroll', 'animate-left');
+        scrollObserver.observe(el);
+    });
 });

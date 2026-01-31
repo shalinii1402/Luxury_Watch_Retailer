@@ -412,6 +412,45 @@ p {
 }
 
 /* Animations */
+/* Animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-left {
+    transform: translateX(-50px);
+}
+
+.animate-right {
+    transform: translateX(50px);
+}
+
+.animate-left.is-visible,
+.animate-right.is-visible {
+    transform: translateX(0);
+}
+
+/* Stagger delays */
+.delay-100 {
+    transition-delay: 0.1s;
+}
+
+.delay-200 {
+    transition-delay: 0.2s;
+}
+
+.delay-300 {
+    transition-delay: 0.3s;
+}
+
+/* Keep fadeUp for legacy just in case, or alias it */
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -423,6 +462,8 @@ p {
         transform: translateY(0);
     }
 }
+
+/* Collection Grid */
 
 /* Collection Grid */
 .collection-grid {
