@@ -61,8 +61,7 @@
                 Where avant-garde engineering meets traditional craftsmanship.<br>
                 Discover the art of the possible with our latent innovations.
             </p>
-            <a href="about.html" class="btn btn-outline">Read Our
-                Philosophy</a>
+            <a href="about.html" class="btn btn-hero-outline">Read Our Philosophy</a>
         </div>
     </section>
 
@@ -70,32 +69,41 @@
     <section class="section">
         <div class="container">
             <h2 class="text-center mb-4">Curated Selections</h2>
-            <div
-                style="display: flex; gap: 40px; overflow-x: auto; padding-bottom: 40px; scroll-snap-type: x mandatory;">
-                <div style="min-width: 350px; scroll-snap-align: center;">
-                    <img src="https://images.pexels.com/photos/32040833/pexels-photo-32040833.jpeg"
-                        style="width: 100%; height: 280px; object-fit: cover; margin-bottom: 20px;">
-                    <h3>The Gold Standard</h3>
-                    <p>Designed for the executive.</p>
-                </div>
-                <!-- Reuse images for demo -->
-                <div style="min-width: 350px; scroll-snap-align: center;">
-                    <img src="images/watch-silver.png"
-                        style="width: 100%; height: 280px; object-fit: cover; margin-bottom: 20px;">
-                    <h3>The Silver Arrow</h3>
-                    <p>Designed for speed.</p>
-                </div>
-                <div style="min-width: 350px; scroll-snap-align: center;">
-                    <img src="images/watch-gold.png"
-                        style="width: 100%; height: 280px; object-fit: cover; margin-bottom: 20px;">
-                    <h3>The Royal Heritage</h3>
-                    <p>Designed for legacy.</p>
-                </div>
-                <div style="min-width: 350px; scroll-snap-align: center;">
-                    <img src="https://images.pexels.com/photos/10414974/pexels-photo-10414974.jpeg"
-                        style="width: 100%; height: 280px; object-fit: cover; margin-bottom: 20px;">
-                    <h3>Midnight Run</h3>
-                    <p>Designed for the night.</p>
+            <div class="showcase-wrapper" style="position: relative;">
+                <button class="scroll-nav prev-btn" id="prev-curated" aria-label="Previous">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+                <button class="scroll-nav next-btn" id="next-curated" aria-label="Next">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+
+                <div class="showcase-scroll" id="curated-scroll"
+                    style="display: flex; gap: 40px; overflow-x: auto; padding-bottom: 20px; scroll-snap-type: x mandatory; scroll-behavior: smooth;">
+                    <div style="min-width: 350px; scroll-snap-align: center;">
+                        <img src="https://images.pexels.com/photos/9203637/pexels-photo-9203637.jpeg"
+                            style="width: 100%; height: 280px; object-fit: cover; margin-bottom: 20px;">
+                        <h3>The Gold Standard</h3>
+                        <p>Designed for the executive.</p>
+                    </div>
+                    <!-- Reuse images for demo -->
+                    <div style="min-width: 350px; scroll-snap-align: center;">
+                        <img src="images/watch-silver.png"
+                            style="width: 100%; height: 280px; object-fit: cover; margin-bottom: 20px;">
+                        <h3>The Silver Arrow</h3>
+                        <p>Designed for speed.</p>
+                    </div>
+                    <div style="min-width: 350px; scroll-snap-align: center;">
+                        <img src="images/watch-gold.png"
+                            style="width: 100%; height: 280px; object-fit: cover; margin-bottom: 20px;">
+                        <h3>The Royal Heritage</h3>
+                        <p>Designed for legacy.</p>
+                    </div>
+                    <div style="min-width: 350px; scroll-snap-align: center;">
+                        <img src="https://images.pexels.com/photos/10414974/pexels-photo-10414974.jpeg"
+                            style="width: 100%; height: 280px; object-fit: cover; margin-bottom: 20px;">
+                        <h3>Midnight Run</h3>
+                        <p>Designed for the night.</p>
+                    </div>
                 </div>
             </div>
         </div>

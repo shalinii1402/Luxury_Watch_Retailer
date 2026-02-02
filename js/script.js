@@ -589,4 +589,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
+
+    // 7. Curated Selections Scroll (Home 2)
+    const curatedScroll = document.getElementById('curated-scroll');
+    const prevCuratedBtn = document.getElementById('prev-curated');
+    const nextCuratedBtn = document.getElementById('next-curated');
+
+    if (curatedScroll && prevCuratedBtn && nextCuratedBtn) {
+        prevCuratedBtn.addEventListener('click', () => {
+            curatedScroll.scrollBy({ left: -400, behavior: 'smooth' });
+        });
+
+        nextCuratedBtn.addEventListener('click', () => {
+            curatedScroll.scrollBy({ left: 400, behavior: 'smooth' });
+        });
+    }
 });
