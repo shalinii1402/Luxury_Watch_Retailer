@@ -3,6 +3,12 @@
    Handles: Sticky Header, Mobile Menu, Wishlist, Form Validation, Theme Toggle, Profile Dropdown
 */
 
+// Theme Initialization (Immediate)
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+    document.body.setAttribute('data-theme', 'light');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Sticky Header
     const header = document.getElementById('header');
@@ -44,14 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Theme Toggle
+    // 3. Theme Toggle Button Logic
     const themeBtn = document.getElementById('theme-toggle');
-    const savedTheme = localStorage.getItem('theme');
 
-    // Apply saved theme
-    if (savedTheme === 'light') {
-        document.body.setAttribute('data-theme', 'light');
-        if (themeBtn) themeBtn.querySelector('ion-icon').setAttribute('name', 'moon-outline');
+    // Update icon if theme is already light
+    if (savedTheme === 'light' && themeBtn) {
+        themeBtn.querySelector('ion-icon').setAttribute('name', 'moon-outline');
     }
 
     if (themeBtn) {
@@ -603,6 +607,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         nextCuratedBtn.addEventListener('click', () => {
             curatedScroll.scrollBy({ left: 400, behavior: 'smooth' });
+        });
+    }
+    // 8. Mobile Filter Toggle (Shop Page)
+    const filterBtn = document.getElementById('filter-toggle');
+    const filtersSidebar = document.querySelector('.filters');
+
+    if (filterBtn && filtersSidebar) {
+        filterBtn.addEventListener('click', () => {
+            filtersSidebar.classList.toggle('active');
+
+            const icon = filterBtn.querySelector('ion-icon');
+            if (filtersSidebar.classList.contains('active')) {
+                icon.setAttribute('name', 'close-outline');
+            } else {
+                icon.setAttribute('name', 'options-outline');
+            }
         });
     }
 });
