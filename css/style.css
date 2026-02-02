@@ -989,3 +989,62 @@ footer {
     border-color: red;
     color: red;
 }
+
+/* Masterful Engineering Section */
+.tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.tech-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.tech-item:last-child {
+    margin-bottom: 0;
+}
+
+.tech-number {
+    font-size: 2rem;
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+.tech-img {
+    width: auto;
+    max-width: 70%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+
+@media (max-width: 1024px) {
+    .tech-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .tech-content {
+        order: 1;
+        /* Content first */
+    }
+
+    .tech-img-container {
+        order: 2;
+        /* Image second */
+    }
+
+    .tech-item {
+        justify-content: center;
+        /* Center the flex row */
+        text-align: left;
+        /* Keep text aligned left relative to number */
+    }
+}
