@@ -375,6 +375,8 @@ p {
 .hero-btns {
     display: flex;
     gap: 20px;
+    justify-content: center;
+    /* Center buttons in hero */
 }
 
 /* Auth Pages */
@@ -503,10 +505,14 @@ p {
 
 .product-img {
     width: 100%;
-    height: 240px;
-    /* Fixed height for uniformity */
+    height: 280px;
+    /* Increased height for prominent display */
     object-fit: contain;
-    /* Ensure entire watch is visible */
+    /* Ensure watch isn't cropped */
+    background: var(--color-bg-dark);
+    /* Match background for uniformity */
+    padding: 20px;
+    /* Space around the watch */
     display: block;
     margin-bottom: 20px;
     transform: scale(1);
@@ -683,11 +689,14 @@ footer {
         height: 100vh;
         background-color: var(--color-bg-dark);
         z-index: 1900;
-        padding: 120px 20px 40px;
+        padding: 140px 20px 60px;
+        /* Increased top padding for better alignment */
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
+        /* Align items to the top */
         gap: 25px;
-        overflow-y: auto;
+        overflow-y: hidden;
+        /* No scrolling inside the menu */
         opacity: 0;
         visibility: hidden;
         transition: var(--transition-smooth);
@@ -697,7 +706,6 @@ footer {
         display: flex;
         opacity: 1;
         visibility: visible;
-        overflow-y: hidden;
     }
 
     .header-icons {
@@ -716,6 +724,21 @@ footer {
         width: 100%;
         display: flex;
         justify-content: center;
+    }
+
+    /* Compact buttons for mobile/tablet */
+    .hero .btn {
+        padding: 12px 24px;
+        font-size: 0.8rem;
+    }
+
+    .nav-menu .btn {
+        width: 160px !important;
+        padding: 10px 20px !important;
+        font-size: 0.8rem !important;
+        justify-content: center;
+        display: flex;
+        align-items: center;
     }
 }
 
@@ -740,6 +763,14 @@ footer {
 
     .hero-btns {
         flex-direction: column;
+        gap: 12px !important;
+    }
+
+    .hero .btn {
+        padding: 10px 20px;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
     }
 
     .header-icons {
