@@ -179,6 +179,20 @@ p {
     text-align: center;
 }
 
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .mobile-only {
+        display: block;
+    }
+
+    .desktop-only {
+        display: none !important;
+    }
+}
+
 .mb-2 {
     margin-bottom: 1rem;
 }
@@ -291,50 +305,7 @@ p {
     color: var(--color-accent);
 }
 
-/* Profile Dropdown */
-.profile-wrapper {
-    position: relative;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 150%;
-    right: 0;
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    min-width: 160px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    border-radius: 4px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: var(--transition-smooth);
-    z-index: 1001;
-}
-
-.profile-wrapper.active .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown-item {
-    display: block;
-    padding: 12px 20px;
-    color: var(--color-text-main);
-    font-size: 0.9rem;
-    border-bottom: 1px solid var(--color-border);
-    transition: background 0.3s;
-}
-
-.dropdown-item:last-child {
-    border-bottom: none;
-}
-
-.dropdown-item:hover {
-    background: var(--color-bg-dark);
-    color: var(--color-accent);
-}
+/* Profile Dropdown Removed */
 
 /* Hero Section */
 .hero {
@@ -697,6 +668,24 @@ footer {
 
     .header-icons .icon-btn {
         font-size: 1.2rem;
+    }
+
+    .header-icons {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .header-icons .btn-primary {
+        order: 1;
+    }
+
+    .header-icons #theme-toggle {
+        order: 2;
+    }
+
+    .header-icons .mobile-toggle {
+        order: 3;
     }
 }
 

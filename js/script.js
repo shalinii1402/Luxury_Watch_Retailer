@@ -16,35 +16,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 2. Mobile Menu Toggle
-    const navContainer = document.querySelector('.header .container');
-    const existingNav = document.querySelector('.nav-menu');
-
-    if (navContainer && window.innerWidth < 1024) {
-        const toggleBtn = document.createElement('button');
-        toggleBtn.classList.add('icon-btn', 'mobile-toggle');
-        toggleBtn.innerHTML = '<ion-icon name="menu-outline"></ion-icon>';
-        toggleBtn.style.cssText = 'font-size: 2rem; z-index: 1001; order: -1; margin-right: auto;';
-
-        // Insert at the start of container (left side) or before Logo? 
-        // User wants Left: Brand. Right: Icons. Center: Menu.
-        // For mobile, Hamburger usually goes Left or Right.
-        // Let's put it on the far right for now to avoid breaking logo layout.
+    function handleMobileMenu() {
         const headerIcons = document.querySelector('.header-icons');
-        headerIcons.insertBefore(toggleBtn, headerIcons.firstChild);
+        const existingNav = document.querySelector('.nav-menu');
+        let toggleBtn = document.querySelector('.mobile-toggle');
 
-        toggleBtn.addEventListener('click', () => {
-            existingNav.classList.toggle('active');
-            const icon = toggleBtn.querySelector('ion-icon');
+        if (window.innerWidth <= 1024) {
+            if (!toggleBtn && headerIcons) {
+                toggleBtn = document.createElement('button');
+                toggleBtn.classList.add('icon-btn', 'mobile-toggle');
+                toggleBtn.innerHTML = '<ion-icon name="menu-outline"></ion-icon>';
+                toggleBtn.style.cssText = 'font-size: 2rem; z-index: 1001;';
+                headerIcons.appendChild(toggleBtn);
 
-            if (existingNav.classList.contains('active')) {
-                icon.setAttribute('name', 'close-outline');
-                // Styles are now handled in CSS for better control
-            } else {
-                icon.setAttribute('name', 'menu-outline');
-                existingNav.removeAttribute('style'); // Clean up any lingering inline styles
+                toggleBtn.addEventListener('click', () => {
+                    existingNav.classList.toggle('active');
+                    const icon = toggleBtn.querySelector('ion-icon');
+
+                    if (existingNav.classList.contains('active')) {
+                        icon.setAttribute('name', 'close-outline');
+                    } else {
+                        icon.setAttribute('name', 'menu-outline');
+                    }
+                });
             }
-        });
+        } else {
+            if (toggleBtn) {
+                toggleBtn.remove();
+                if (existingNav) {
+                    existingNav.classList.remove('active');
+                    existingNav.removeAttribute('style');
+                }
+            }
+        }
     }
+
+    handleMobileMenu();
+    window.addEventListener('resize', handleMobileMenu);
 
     // 3. Theme Toggle
     const themeBtn = document.getElementById('theme-toggle');
@@ -73,23 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. Profile Dropdown
-    const profileBtn = document.getElementById('profile-btn');
-    const profileWrapper = document.querySelector('.profile-wrapper');
-
-    if (profileBtn && profileWrapper) {
-        profileBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            profileWrapper.classList.toggle('active');
-        });
-
-        // Close on click outside
-        document.addEventListener('click', (e) => {
-            if (!profileWrapper.contains(e.target)) {
-                profileWrapper.classList.remove('active');
-            }
-        });
-    }
+    // 4. Profile Dropdown Logic Removed
+    // Buttons replaced with separate Login / Sign Up links in HTML
 
     // 5. Wishlist System
     const wishlistKey = 'chronea_wishlist';
@@ -421,4 +414,189 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.add('animate-on-scroll', 'animate-left');
         scrollObserver.observe(el);
     });
+    // 10. Dynamic Product Details Logic
+    const productData = {
+        'gold-horizon': {
+            name: 'Gold Horizon',
+            cat: 'Moonphase Collection',
+            model: 'REF-2026-GH',
+            price: 'Price on Request',
+            description: 'A masterpiece of horological engineering, the Gold Horizon features a hand-finished rose gold case and a precision moonphase complication.',
+            movement: 'Automatic Caliber 4040',
+            case: '18k Rose Gold',
+            diameter: '42 mm',
+            water: '50 Meters',
+            strap: 'Alligator Leather',
+            img: 'https://images.pexels.com/photos/9203637/pexels-photo-9203637.jpeg',
+            story: 'Every Gold Horizon timepiece takes over 300 hours to assemble. Our master watchmakers in Geneva ensure that every gear, spring, and jewel is placed with absolute perfection.'
+        },
+        'silver-chrono-ii': {
+            name: 'Silver Chrono II',
+            cat: 'Chronograph Collection',
+            model: 'REF-2026-SC',
+            price: 'Price on Request',
+            description: 'The Silver Chrono II is designed for those who value precision and performance. Its sleek stainless steel design is perfect for any occasion.',
+            movement: 'Automatic Chronograph',
+            case: 'Stainless Steel',
+            diameter: '40 mm',
+            water: '100 Meters',
+            strap: 'Metal Bracelet',
+            img: 'images/watch-silver.png',
+            story: 'Born from the world of high-speed racing, the Silver Chrono II combines rugged durability with refined Swiss elegance.'
+        },
+        'royal-emblem': {
+            name: 'Royal Emblem',
+            cat: 'Heritage Series',
+            model: 'REF-2026-RE',
+            price: 'Price on Request',
+            description: 'An icon of timeless design, the Royal Emblem represents the pinnacle of CHRONÉA heritage and traditional watchmaking.',
+            movement: 'Manual Wind Caliber 1924',
+            case: '18k Yellow Gold',
+            diameter: '38 mm',
+            water: '30 Meters',
+            strap: 'Calfskin Leather',
+            img: 'images/watch-gold.png',
+            story: 'Inspired by our first creation in 1924, the Royal Emblem is a tribute to a century of uncompromising quality.'
+        },
+        'aviator-x': {
+            name: 'Aviator X',
+            cat: 'Pilot Collection',
+            model: 'REF-2025-AX',
+            price: 'Price on Request',
+            description: 'Engineered for the skies, the Aviator X features high visibility and extreme precision in a durable titanium shell.',
+            movement: 'Quartz High-Precision',
+            case: 'Titanium',
+            diameter: '44 mm',
+            water: '100 Meters',
+            strap: 'Nylon Tech Strap',
+            img: 'https://images.pexels.com/photos/3083461/pexels-photo-3083461.jpeg',
+            story: 'The Aviator X was developed in collaboration with elite pilots to ensure maximum reliability in the most demanding environments.'
+        },
+        'celestial-rose': {
+            name: 'Celestial Rose',
+            cat: 'Moonphase Series',
+            model: 'REF-2026-CR',
+            price: 'Price on Request',
+            description: 'Graceful and evocative, the Celestial Rose captures the beauty of the night sky on your wrist.',
+            movement: 'Automatic Caliber 3030',
+            case: '18k Rose Gold',
+            diameter: '36 mm',
+            water: '30 Meters',
+            strap: 'Satin Silk Strap',
+            img: 'https://images.pexels.com/photos/30639797/pexels-photo-30639797.jpeg',
+            story: 'A tribute to the stars, each Celestial Rose features a unique mother-of-pearl dial and hand-set diamonds.'
+        },
+        'deep-dive-pro': {
+            name: 'Deep Dive Pro',
+            cat: 'Diver Collection',
+            model: 'REF-2025-DD',
+            price: 'Price on Request',
+            description: 'The ultimate tool for the modern explorer, built to withstand the pressures of the deep ocean.',
+            movement: 'Automatic Caliber 5050',
+            case: 'Brushed Titanium',
+            diameter: '45 mm',
+            water: '300 Meters',
+            strap: 'Rubber Dive Strap',
+            img: 'https://images.pexels.com/photos/11106320/pexels-photo-11106320.jpeg',
+            story: 'Tested in the deepest reaches of the Mediterranean, the Deep Dive Pro is more than a watch—it is vital equipment.'
+        },
+        'pearl-essence': {
+            name: 'Pearl Essence',
+            cat: 'Jewelry Series',
+            model: 'REF-2026-PE',
+            price: 'Price on Request',
+            description: 'Where fine jewelry meets master horology. A delicate timepiece for the most formal occasions.',
+            movement: 'Ultra-Thin Quartz',
+            case: 'Platinum',
+            diameter: '32 mm',
+            water: 'Splashes Only',
+            strap: 'Diamond-Set Bracelet',
+            img: 'https://images.pexels.com/photos/12215971/pexels-photo-12215971.jpeg',
+            story: 'The Pearl Essence takes over 500 hours of jewel-setting alone, ensuring every diamond catches the light perfectly.'
+        },
+        'grand-master': {
+            name: 'Grand Master',
+            cat: 'Complication Collection',
+            model: 'REF-2025-GM',
+            price: 'Price on Request',
+            description: 'Our most complex movement yet, featuring a perpetual calendar and minute repeater.',
+            movement: 'Manual Wind Complication',
+            case: '18k White Gold',
+            diameter: '43 mm',
+            water: '50 Meters',
+            strap: 'Croc-Embossed Leather',
+            img: 'https://images.pexels.com/photos/3766111/pexels-photo-3766111.jpeg',
+            story: 'The Grand Master represents the summit of our watchmakers\' skill, containing over 800 individual components.'
+        },
+        'speedster-gt': {
+            name: 'Speedster GT',
+            cat: 'Racing Series',
+            model: 'REF-2025-GT',
+            price: 'Price on Request',
+            description: 'High-tech materials and high-speed design come together in this lightweight carbon fiber chronograph.',
+            movement: 'Automatic Chronograph 9000',
+            case: 'Carbon Fiber',
+            diameter: '44 mm',
+            water: '50 Meters',
+            strap: 'Perforated Racing Leather',
+            img: 'https://images.pexels.com/photos/10478973/pexels-photo-10478973.jpeg',
+            story: 'The Speedster GT uses actual carbon fiber from Formula 1 chassis, making it one of the lightest chronographs in the world.'
+        }
+    };
+
+    // Populate Details Page
+    if (window.location.pathname.includes('product-details.html')) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id') || 'gold-horizon'; // Default
+        const product = productData[productId];
+
+        if (product) {
+            // Update Title & Meta
+            document.title = `${product.name} | CHRONÉA`;
+
+            // Update Image
+            const detailImg = document.querySelector('.detail-img-wrapper img');
+            if (detailImg) {
+                detailImg.src = product.img;
+                detailImg.alt = product.name;
+            }
+
+            // Update Info
+            const catEl = document.querySelector('.product-cat');
+            const h1El = document.querySelector('h1');
+            const modelEl = document.querySelector('.detail-info p[style*="font-size: 1.2rem"]'); // Model No.
+            const priceEl = document.querySelector('.detail-info h2');
+
+            if (catEl) catEl.innerText = product.cat;
+            if (h1El) h1El.innerText = product.name;
+            if (modelEl) modelEl.innerText = `Model No. ${product.model}`;
+            if (priceEl) priceEl.innerText = product.price;
+
+            // Description logic
+            const detailInfo = document.querySelector('.detail-info');
+            if (detailInfo) {
+                const paragraphs = Array.from(detailInfo.querySelectorAll('p'));
+                // The description is usually the second p or the one after price h2
+                const descP = paragraphs.find(p => !p.style.fontSize); // Simple heuristic
+                if (descP) descP.innerText = product.description;
+            }
+
+            // Update Specs
+            const specItems = document.querySelectorAll('.spec-item');
+            if (specItems.length >= 5) {
+                specItems[0].querySelector('span:last-child').innerText = product.movement;
+                specItems[1].querySelector('span:last-child').innerText = product.case;
+                specItems[2].querySelector('span:last-child').innerText = product.diameter;
+                specItems[3].querySelector('span:last-child').innerText = product.water;
+                specItems[4].querySelector('span:last-child').innerText = product.strap;
+            }
+
+            // Update Story
+            const storySection = document.querySelector('section.section.bg-darker');
+            if (storySection) {
+                const storyP = storySection.querySelector('p');
+                if (storyP) storyP.innerText = product.story;
+            }
+        }
+    }
 });
