@@ -16,43 +16,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 2. Mobile Menu Toggle
-    function handleMobileMenu() {
-        const headerIcons = document.querySelector('.header-icons');
-        const existingNav = document.querySelector('.nav-menu');
-        let toggleBtn = document.querySelector('.mobile-toggle');
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navMenu = document.querySelector('.nav-menu');
 
-        if (window.innerWidth <= 1024) {
-            if (!toggleBtn && headerIcons) {
-                toggleBtn = document.createElement('button');
-                toggleBtn.classList.add('icon-btn', 'mobile-toggle');
-                toggleBtn.innerHTML = '<ion-icon name="menu-outline"></ion-icon>';
-                toggleBtn.style.cssText = 'font-size: 2rem; z-index: 1001;';
-                headerIcons.appendChild(toggleBtn);
+    if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileToggle.querySelector('ion-icon');
 
-                toggleBtn.addEventListener('click', () => {
-                    existingNav.classList.toggle('active');
-                    const icon = toggleBtn.querySelector('ion-icon');
-
-                    if (existingNav.classList.contains('active')) {
-                        icon.setAttribute('name', 'close-outline');
-                    } else {
-                        icon.setAttribute('name', 'menu-outline');
-                    }
-                });
+            if (navMenu.classList.contains('active')) {
+                icon.setAttribute('name', 'close-outline');
+                document.body.style.overflow = 'hidden'; // Lock background
+            } else {
+                icon.setAttribute('name', 'menu-outline');
+                document.body.style.overflow = ''; // Unlock background
             }
-        } else {
-            if (toggleBtn) {
-                toggleBtn.remove();
-                if (existingNav) {
-                    existingNav.classList.remove('active');
-                    existingNav.removeAttribute('style');
-                }
-            }
-        }
+        });
+
+        // Close menu when clicking a link
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileToggle.querySelector('ion-icon');
+                icon.setAttribute('name', 'menu-outline');
+                document.body.style.overflow = '';
+            });
+        });
     }
-
-    handleMobileMenu();
-    window.addEventListener('resize', handleMobileMenu);
 
     // 3. Theme Toggle
     const themeBtn = document.getElementById('theme-toggle');

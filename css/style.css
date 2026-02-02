@@ -156,6 +156,12 @@ p {
     transform: translateY(-2px);
 }
 
+.btn-sm {
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
 /* Layout Utilities */
 .container {
     max-width: var(--container-width);
@@ -207,7 +213,7 @@ p {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 2000;
     padding: 20px 0;
     background: var(--header-bg);
     backdrop-filter: blur(10px);
@@ -252,6 +258,17 @@ p {
 .nav-menu {
     display: flex;
     gap: 30px;
+    align-items: center;
+}
+
+.inquiry-btn {
+    margin-left: 10px;
+}
+
+@media (max-width: 1024px) {
+    .inquiry-btn {
+        margin-left: 0;
+    }
 }
 
 .nav-link {
@@ -303,6 +320,12 @@ p {
 
 .icon-btn:hover {
     color: var(--color-accent);
+}
+
+.mobile-toggle {
+    display: none;
+    font-size: 2.2rem;
+    z-index: 2001;
 }
 
 /* Profile Dropdown Removed */
@@ -641,51 +664,58 @@ footer {
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .nav-menu {
-        display: none;
+    .header {
+        padding: 15px 0;
     }
 
-    .nav-menu.active {
-        display: flex;
+    .header .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .nav-menu {
+        display: none;
         flex-direction: column;
         position: fixed;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-color: var(--color-bg-card);
-        z-index: 999;
-        /* Stays below the header (z-index 1000) */
-        padding-top: 80px;
-        /* pushes content below header */
-        padding-bottom: 20px;
+        background-color: var(--color-bg-dark);
+        z-index: 1900;
+        padding: 120px 20px 40px;
         align-items: center;
         justify-content: center;
-        gap: 30px;
-        overflow: hidden;
-        /* Prevents scrolling */
+        gap: 25px;
+        overflow-y: auto;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition-smooth);
     }
 
-    .header-icons .icon-btn {
-        font-size: 1.2rem;
+    .nav-menu.active {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+        overflow-y: hidden;
     }
 
     .header-icons {
         display: flex;
         align-items: center;
         gap: 15px;
+        z-index: 2100;
     }
 
-    .header-icons .btn-primary {
-        order: 1;
+    .mobile-toggle {
+        display: flex;
     }
 
-    .header-icons #theme-toggle {
-        order: 2;
-    }
-
-    .header-icons .mobile-toggle {
-        order: 3;
+    /* Stack buttons vertically in mobile menu */
+    .nav-menu li.mobile-only {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 }
 
