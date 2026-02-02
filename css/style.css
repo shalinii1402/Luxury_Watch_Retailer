@@ -123,8 +123,8 @@ p {
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 14px 28px;
-    font-size: 0.9rem;
+    padding: 12px 24px;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 500;
@@ -531,12 +531,28 @@ p {
 
 @media (max-width: 1024px) {
     .showcase-wrapper {
-        padding: 0;
+        padding: 0 20px;
+        /* Add padding for button space */
     }
 
     .scroll-nav {
-        display: none;
-        /* Use touch scroll on mobile */
+        display: flex;
+        /* Keep buttons visible on mobile */
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+        background: rgba(var(--color-bg-card), 0.95);
+        backdrop-filter: blur(10px);
+    }
+
+    .prev-btn {
+        left: 5px;
+        /* Position inside viewport */
+    }
+
+    .next-btn {
+        right: 5px;
+        /* Position inside viewport */
     }
 }
 
@@ -647,7 +663,11 @@ p {
     }
 }
 
-/* Sort Select Styling */
+/* Journal Item Styling */
+.journal-article {
+    text-align: left;
+}
+
 #sort-select option {
     background-color: var(--color-bg-card);
     color: var(--color-text-main);
@@ -678,7 +698,7 @@ p {
 
 .product-img {
     width: 100%;
-    height: 350px;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     display: block;
     margin: 0 auto 20px;
@@ -1205,5 +1225,184 @@ footer {
     .hero-btns .btn {
         width: 100%;
         /* Ensure both buttons match width */
+    }
+}
+
+/* Tablet View Optimizations (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* General Container Centering */
+    .container {
+        padding: 0 40px;
+    }
+
+    /* Section Spacing */
+    .section {
+        padding: 80px 20px;
+    }
+
+    /* Text Centering */
+    .text-center {
+        text-align: center;
+    }
+
+    /* Headings - Ensure proper centering */
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    /* Tech Grid - Masterful Engineering Section */
+    .tech-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .tech-content {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tech-content h2 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .tech-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        max-width: 600px;
+        margin: 0 auto 40px;
+    }
+
+    .tech-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .tech-number {
+        flex-shrink: 0;
+        font-size: 2rem;
+    }
+
+    .tech-img-container {
+        order: 2;
+        text-align: center;
+    }
+
+    .tech-img {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+
+    /* Features Grid */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .feature-item {
+        text-align: center;
+        padding: 30px;
+    }
+
+    /* Collection Grid - Journal Section */
+    .collection-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 40px;
+        justify-content: center;
+    }
+
+    .collection-grid>article {
+        width: calc(50% - 15px);
+        min-width: 280px;
+    }
+
+    .journal-article {
+        text-align: center;
+    }
+
+    /* Showcase Wrapper - Curated Selections */
+    .showcase-wrapper {
+        padding: 0 30px;
+    }
+
+    .showcase-scroll {
+        gap: 30px;
+    }
+
+    /* Testimonial Grid */
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Footer Grid */
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    .footer-col {
+        text-align: center;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-icons {
+        justify-content: center;
+    }
+
+    /* Hero Section */
+    .hero-content {
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .hero-btns {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    /* Product Cards */
+    .product-card {
+        max-width: 100%;
+    }
+
+    /* Newsletter Form */
+    .newsletter-form {
+        max-width: 500px;
+        margin: 20px auto 0;
+    }
+
+    /* Ensure all sections have centered content */
+    .section>.container>div:not(.tech-grid):not(.features-grid):not(.collection-grid) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Center all paragraphs in sections */
+    .section p {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 700px;
     }
 }
