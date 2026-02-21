@@ -36,15 +36,22 @@
 
         .info-item {
             display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .info-item>div {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 6px;
         }
 
         .info-icon {
             font-size: 1.5rem;
             color: var(--color-accent);
-            margin-right: 20px;
-            margin-top: 5px;
+            flex-shrink: 0;
         }
 
         @media (max-width: 900px) {
@@ -104,30 +111,29 @@
                     <div class="info-item" style="margin-top: 30px;">
                         <ion-icon name="location-outline" class="info-icon"></ion-icon>
                         <div>
-                            <strong style="color: white; display: block; margin-bottom: 5px;">CHRONÉA Flagship
-                                Store</strong>
-                            <p>123 Luxury Avenue, District 1<br>Geneva, Switzerland 1204</p>
+                            <strong style="color: white; margin-right: 10px;">Store:</strong>
+                            <span style="color: var(--color-text-muted);">123 Luxury Avenue, District 1, Geneva</span>
                         </div>
                     </div>
                     <div class="info-item">
                         <ion-icon name="call-outline" class="info-icon"></ion-icon>
                         <div>
-                            <strong style="color: white; display: block; margin-bottom: 5px;">Phone</strong>
-                            <p>+41 22 123 4567</p>
+                            <strong style="color: white; margin-right: 10px;">Phone:</strong>
+                            <span style="color: var(--color-text-muted);">+41 22 123 4567</span>
                         </div>
                     </div>
                     <div class="info-item">
                         <ion-icon name="mail-outline" class="info-icon"></ion-icon>
                         <div>
-                            <strong style="color: white; display: block; margin-bottom: 5px;">Concierge Email</strong>
-                            <p>concierge@chronea-watches.com</p>
+                            <strong style="color: white; margin-right: 10px;">Email:</strong>
+                            <span style="color: var(--color-text-muted);">concierge@chronea-watches.com</span>
                         </div>
                     </div>
                     <div class="info-item">
                         <ion-icon name="time-outline" class="info-icon"></ion-icon>
                         <div>
-                            <strong style="color: white; display: block; margin-bottom: 5px;">Opening Hours</strong>
-                            <p>Mon - Sat: 10:00 AM - 8:00 PM<br>Sun: By Appointment Only</p>
+                            <strong style="color: white; margin-right: 10px;">Hours:</strong>
+                            <span style="color: var(--color-text-muted);">Mon-Sat 10:00-20:00, Sun: Appt Only</span>
                         </div>
                     </div>
                 </div>

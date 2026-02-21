@@ -360,18 +360,32 @@ p {
     align-items: center;
     position: relative;
     padding-top: 0;
-    /* Removed padding to center content exactly */
+    overflow: hidden;
 }
 
-.hero-bg {
+.hero-home-1 {
+    background: url('https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+    background-attachment: fixed;
+}
+
+.hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    filter: brightness(0.6);
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(20, 20, 40, 0.7) 50%, rgba(212, 175, 55, 0.1) 100%);
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-bg {
+    display: none;
+    /* Deprecated in favor of CSS background */
 }
 
 .hero-content {
