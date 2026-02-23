@@ -48,10 +48,31 @@
             gap: 6px;
         }
 
+        .info-item strong {
+            color: var(--color-text-main);
+            margin-right: 10px;
+        }
+
+        .info-item span {
+            color: var(--color-text-muted);
+        }
+
         .info-icon {
             font-size: 1.5rem;
             color: var(--color-accent);
             flex-shrink: 0;
+        }
+
+        .contact-map {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: invert(90%) hue-rotate(180deg);
+            transition: var(--transition-smooth);
+        }
+
+        [data-theme="light"] .contact-map {
+            filter: none;
         }
 
         @media (max-width: 900px) {
@@ -111,29 +132,29 @@
                     <div class="info-item" style="margin-top: 30px;">
                         <ion-icon name="location-outline" class="info-icon"></ion-icon>
                         <div>
-                            <strong style="color: white; margin-right: 10px;">Store:</strong>
-                            <span style="color: var(--color-text-muted);">123 Luxury Avenue, District 1, Geneva</span>
+                            <strong>Store:</strong>
+                            <span>123 Luxury Avenue, District 1, Geneva</span>
                         </div>
                     </div>
                     <div class="info-item">
                         <ion-icon name="call-outline" class="info-icon"></ion-icon>
                         <div>
-                            <strong style="color: white; margin-right: 10px;">Phone:</strong>
-                            <span style="color: var(--color-text-muted);">+41 22 123 4567</span>
+                            <strong>Phone:</strong>
+                            <span>+41 22 123 4567</span>
                         </div>
                     </div>
                     <div class="info-item">
                         <ion-icon name="mail-outline" class="info-icon"></ion-icon>
                         <div>
-                            <strong style="color: white; margin-right: 10px;">Email:</strong>
-                            <span style="color: var(--color-text-muted);">concierge@chronea-watches.com</span>
+                            <strong>Email:</strong>
+                            <span>concierge@chronea-watches.com</span>
                         </div>
                     </div>
                     <div class="info-item">
                         <ion-icon name="time-outline" class="info-icon"></ion-icon>
                         <div>
-                            <strong style="color: white; margin-right: 10px;">Hours:</strong>
-                            <span style="color: var(--color-text-muted);">Mon-Sat 10:00-20:00, Sun: Appt Only</span>
+                            <strong>Hours:</strong>
+                            <span>Mon-Sat 10:00-20:00, Sun: Appt Only</span>
                         </div>
                     </div>
                 </div>
@@ -142,8 +163,7 @@
                     <!-- Map Placeholder -->
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2761.6441551066046!2d6.143158!3d46.204391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c6526a6b1897b%3A0x6b2b7e51c8e1e0a!2sGeneva%2C%20Switzerland!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
-                        width="100%" height="100%" style="border:0; filter: invert(90%) hue-rotate(180deg);"
-                        allowfullscreen="" loading="lazy">
+                        class="contact-map" allowfullscreen="" loading="lazy">
                     </iframe>
                 </div>
             </div>
