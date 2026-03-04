@@ -347,6 +347,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Attach Listeners
         genderCheckboxes.forEach(cb => cb.addEventListener('change', filterAndSort));
         if (sortSelect) sortSelect.addEventListener('change', filterAndSort);
+
+        // Initial call to ensure products are sorted/filtered on load
+        filterAndSort();
     }
 
     // 8. Back to Top Button
@@ -372,33 +375,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     // 9. Scroll Animations
     const observerOptions = {
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
+        threshold: 0.05, // Lower threshold to ensure large sections on mobile trigger on load
+        rootMargin: "0px 0px -10px 0px" // Standard margin
     };
 
     const scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                // Optional: Stop observing once visible to run only once
                 scrollObserver.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Auto-select elements to animate if they don't have manual classes yet
-    // We target common block elements to apply the default 'fade-up'
+    // Optimized animation targets to avoid double-animation overlap on the same area
     const animateTargets = document.querySelectorAll('.section, .product-card, .hero-content, .hero-btns, .feature-item, footer, .auth-card');
 
-    animateTargets.forEach((el, index) => {
+    animateTargets.forEach((el) => {
+        // We add the class first, then observe. 
+        // For mobile stability, we ensures the observer is ready.
         el.classList.add('animate-on-scroll');
-
-        // Add staggering for grids
-        if (el.classList.contains('product-card') || el.classList.contains('feature-item')) {
-            // Simple stagger visual within the same container roughly
-            // We can randomly assign a delay or based on child index
-        }
-
         scrollObserver.observe(el);
     });
 
